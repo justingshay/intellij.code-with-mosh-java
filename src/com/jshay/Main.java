@@ -1,5 +1,7 @@
 package com.jshay;
 
+import org.w3c.dom.Text;
+
 import java.awt.*;
 import java.text.NumberFormat;
 import java.util.Arrays;
@@ -73,6 +75,7 @@ public class Main {
         n is number of payments (number of months will be paying loan)
         */
 
+        /*
         int principal = (int) readNumber("Principal: ", 1000, 1_000_000);
         float annualInterest = (float) readNumber("Annual Interest: ", 1, 30);
         byte years = (byte) readNumber("Period (in Years)",1, 30);
@@ -81,7 +84,41 @@ public class Main {
         String mortgageFormatted = NumberFormat.getCurrencyInstance().format(mortgage);
         System.out.println("Your mortgage payment is: " + mortgageFormatted);
         paymentSchedule(principal, annualInterest, years);
+         */
         //~~~~~~~~~~ end Mortgage Calculator v2 ~~~~~~~~~~
+
+        //~~~~~~~ Coding with Mosh - Ultimate Java 2 ~~~~~~~
+        //Creating Objects
+        /*
+        var textBox1 = new TextBox();
+        textBox1.setText("Box 1");
+        System.out.println(textBox1.text);
+
+        var textBox2 = new TextBox();
+        textBox2.setText("Box 2");
+        System.out.println(textBox2.text);
+         */
+
+        //Encapsulation
+        //Abstraction - Reduce complexity by hiding unnecessary details
+        //Coupling - the level of dependency between classes
+        //Constructors
+        //Method Overloading
+        //Static Members
+        var employee = new Employee(50_000, 20);
+        Employee.printNumberOfEmployees();
+        int wage = employee.calculateWage();
+        System.out.println(NumberFormat.getCurrencyInstance().format(wage));
+
+
+        //Reducing Coupling
+        /*
+        Browser browser = new Browser();
+        browser.navigate("");
+         */
+
+
+
 
     }
 
