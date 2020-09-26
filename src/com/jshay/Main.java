@@ -1,12 +1,6 @@
 package com.jshay;
 
-import org.w3c.dom.Text;
-
-import java.awt.*;
 import java.text.NumberFormat;
-import java.util.Arrays;
-import java.util.Date;
-import java.util.Scanner;
 
 public class Main {
 
@@ -75,16 +69,16 @@ public class Main {
         n is number of payments (number of months will be paying loan)
         */
 
-        /*
-        int principal = (int) readNumber("Principal: ", 1000, 1_000_000);
-        float annualInterest = (float) readNumber("Annual Interest: ", 1, 30);
-        byte years = (byte) readNumber("Period (in Years)",1, 30);
+
+        int principal = (int) Console.readNumber("Principal: ", 1000, 1_000_000);
+        float annualInterest = (float) Console.readNumber("Annual Interest: ", 1, 30);
+        byte years = (byte) Console.readNumber("Period (in Years)",1, 30);
 
         double mortgage = calculateMortgage(principal, annualInterest, years);
         String mortgageFormatted = NumberFormat.getCurrencyInstance().format(mortgage);
         System.out.println("Your mortgage payment is: " + mortgageFormatted);
         paymentSchedule(principal, annualInterest, years);
-         */
+
         //~~~~~~~~~~ end Mortgage Calculator v2 ~~~~~~~~~~
 
         //~~~~~~~ Coding with Mosh - Ultimate Java 2 ~~~~~~~
@@ -120,20 +114,6 @@ public class Main {
 
 
 
-    }
-
-    public static double readNumber(String prompt, int min, int max){
-        Scanner scanner = new Scanner(System.in);
-        double value;
-        while(true){
-            System.out.print(prompt);
-            value = scanner.nextDouble();
-            if(value >= min && value <= max)
-                break;
-            System.out.println("Enter a value greater than " + min + " and less than " + max);
-        }
-        System.out.println(value);
-        return value;
     }
 
     public static double calculateMortgage(int principal, float annualInterest, byte years){
