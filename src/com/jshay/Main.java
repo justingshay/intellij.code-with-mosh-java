@@ -72,12 +72,12 @@ public class Main {
 
         int principal = (int) Console.readNumber("Principal: ", 1000, 1_000_000);
         float annualInterest = (float) Console.readNumber("Annual Interest: ", 1, 30);
-        byte years = (byte) Console.readNumber("Period (in Years)",1, 30);
+        byte years = (byte) Console.readNumber("Period (in Years): ",1, 30);
 
-        double mortgage = calculateMortgage(principal, annualInterest, years);
-        String mortgageFormatted = NumberFormat.getCurrencyInstance().format(mortgage);
-        System.out.println("Your mortgage payment is: " + mortgageFormatted);
-        paymentSchedule(principal, annualInterest, years);
+        var calculator = new MortgageCalculator(principal, annualInterest, years);
+        var report = new MortgageReport(calculator);
+        report.printMortgage();
+        report.paymentSchedule();
 
         //~~~~~~~~~~ end Mortgage Calculator v2 ~~~~~~~~~~
 
@@ -99,10 +99,12 @@ public class Main {
         //Constructors
         //Method Overloading
         //Static Members
+        /*
         var employee = new Employee(50_000, 20);
         Employee.printNumberOfEmployees();
         int wage = employee.calculateWage();
         System.out.println(NumberFormat.getCurrencyInstance().format(wage));
+         */
 
 
         //Reducing Coupling
@@ -116,43 +118,4 @@ public class Main {
 
     }
 
-    public static double calculateMortgage(int principal, float annualInterest, byte years){
-        /*Calculating Mortgage payments
-                r(1+r)^n
-        M = P*------------
-               (1+r)^n -1
-        P is the Principal
-        r is monthly interest rate, calculated by annual rate / 12
-        n is number of payments (number of months will be paying loan)
-        */
-        final int percent = 100;
-        final int months_In_Year = 12;
-
-        double monthlyInterest = (annualInterest / percent) / months_In_Year;
-        System.out.println(monthlyInterest);
-        int numPayments = years * months_In_Year;
-        System.out.println(numPayments);
-
-        double mortgage = principal * ( (monthlyInterest *Math.pow(1 +  monthlyInterest, numPayments)) / (Math.pow(1 + monthlyInterest, numPayments) -1 ) );
-        System.out.println(mortgage);
-        return mortgage;
-    }
-
-    public static void paymentSchedule(int principal, float annualInterest, byte years){
-        final int percent = 100;
-        final int months_In_Years = 12;
-
-        double remainingBalance;
-        int numPayments = years * months_In_Years;
-        double monthlyInterest = annualInterest / percent / months_In_Years;
-
-        System.out.println("Monthly Payment Schedule: ");
-        for(int i = 1; i <= numPayments; i++){
-            remainingBalance = principal * ((Math.pow(1 + monthlyInterest, numPayments)-Math.pow(1+monthlyInterest, i))/
-                    (Math.pow(1+ monthlyInterest, numPayments)-1));
-            String remainBalanceFormatted = NumberFormat.getCurrencyInstance().format(remainingBalance);
-            System.out.println(i + ": " + remainBalanceFormatted);
-        }
-
-    }
 }
