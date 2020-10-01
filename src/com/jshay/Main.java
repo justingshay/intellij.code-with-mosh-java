@@ -19,7 +19,7 @@ public class Main {
         r is monthly interest rate, calculated by annual rate / 12
         n is number of payments (number of months will be paying loan)
         */
-
+        /*
         int principal = (int) Console.readNumber("Principal: ", 1000, 1_000_000);
         float annualInterest = (float) Console.readNumber("Annual Interest: ", 1, 30);
         byte years = (byte) Console.readNumber("Period (in Years)",1, 30);
@@ -29,8 +29,18 @@ public class Main {
 
         report.printMortgage();
         report.printPaymentSchedule();
-
+        */
         //~~~~~~~~~~ end Mortgage Calculator v2 ~~~~~~~~~~
+        //var con = new UIControl();
+        var control = new TextBox();
+        var control2 = control;
+        var control3 = new TextBox();
+        control.disable();
+        System.out.println(control.isEnabled());
+        System.out.println(control.hashCode());
+        System.out.println(control.equals(control2));
+        System.out.println(control.equals(control3));
+        System.out.println(control.toString());
 
 
 

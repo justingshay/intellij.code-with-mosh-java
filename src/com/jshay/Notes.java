@@ -97,5 +97,9 @@ public class Notes {
         browser.navigate("");
          */
 
+    //INHERITANCE
+    //OBJEC CLASS
+    //CONSTRUCTORS
+
 
 }
