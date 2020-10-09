@@ -1,4 +1,4 @@
-package com.jshay;
+package com.jshay.code_with_mosh.lectures.part1_2;
 
 public class Employee {
     private int baseSalary;

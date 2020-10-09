@@ -1,4 +1,4 @@
-package com.jshay;
+package com.jshay.code_with_mosh.lectures.part1_2;
 
 public class Notes {
 
@@ -98,8 +98,112 @@ public class Notes {
          */
 
     //INHERITANCE
-    //OBJEC CLASS
+    //OBJECT CLASS
     //CONSTRUCTORS
+    //var con = new UIControl();
+    /*
+    var control = new TextBox();
+    var control2 = control;
+    var control3 = new TextBox();
+    control.disable();
+    System.out.println(control.isEnabled());
+    System.out.println(control.hashCode());
+    System.out.println(control.equals(control2));
+    System.out.println(control.equals(control3));
+    System.out.println(control.toString());
+    */
 
+    //OVERRIDING METHODS
+    /*
+    //override needs to have the same number of arguments and have the same return value
+    @Override
+    public String toString(){
+        //stuff
+    }
+     */
+    // println method automatically calls the toString() method of any object
+
+    //UPCASTING and DOWNCASTING
+    /*
+    Upcasting - casting an object to one of its super types
+    Downcasting - casting an object to one of its sub types
+     */
+
+    //COMPARING OBJECTS
+    /*
+    var point1 = new Point(1,2);
+    var point2 = new Point(1,2);
+    System.out.println(point1.equals(point2));
+    System.out.println(point1.hashCode());   //false
+    System.out.println(point2.hashCode());
+     */
+
+    //POLYMORPHISM - means many forms
+//    UIControl[] controls = {new TextBox(), new CheckBox()};
+//        for(var control : controls){
+//        control.render();
+//    }
+    //ABSTRACT CLASSES and METHODS
+    /*
+    Abstract classes cannot be initialized but can be extended =~ used as a template
+    Abstract classes have no body and must be overridden in the class that extends the abstract class
+     */
+
+    //FINAL CLASSES and METHODS
+    /*
+    Classes declared as final cannot be extended
+    Methods declared as final cannot be overridden
+     */
+
+    //DEEP INHERITANCE HIERARCHIES
+    //avoid inheritance deeper than 3 levels of dependencies
+
+    //MULTIPLE INHERITANCE
+    //not supported in Java because of its complexities
+
+
+
+    //INTERFACES - used to build loosely-coupled, extensible, testable applications
+    /*
+        coupling - the level of dependencies between two software entities like classes
+
+        Interfaces are like classes but only include method declarations, no code, no implementation
+            - defines capabilities a class should have
+
+        Interfaces define WHAT should be done
+        Classes define HOW it should be done
+     */
+
+    //CREATING AN INTERFACE
+    //DEPENDENCY INJECTION - classes should not instantiate their dependencies
+    //CONSTRUCTOR INJECTION
+    /*
+    var calculator = new TaxCalculator2018(100_000);
+    var report = new TaxReport(calculator);
+     */
+
+    //SETTER INJECTION
+    /*
+    public void setCalculator(TaxCalculator calculator) {
+        this.calculator = calculator;
+    }
+     */
+
+    //METHOD INJECTION
+    /*
+    public void show(TaxCalculator calculator){
+        var tax = calculator.calculateTax();
+        System.out.println(tax);
+    }
+     */
+
+    //INTERFACE SEGREGATION PRINCIPLE - divide big interfaces into smaller ones
+    /*
+    separate like capabilities into separate interfaces
+    Interfaces can have multiple parents, classes can not
+     */
+
+    //Avoid implementing fields in interfaces - are constant (final) and static //cannot be changed except in interface
+    
 
 }

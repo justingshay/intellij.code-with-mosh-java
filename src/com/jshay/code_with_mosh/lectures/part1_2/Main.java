@@ -1,6 +1,4 @@
-package com.jshay;
-
-import java.text.NumberFormat;
+package com.jshay.code_with_mosh.lectures.part1_2;
 
 public class Main {
 
@@ -31,20 +29,11 @@ public class Main {
         report.printPaymentSchedule();
         */
         //~~~~~~~~~~ end Mortgage Calculator v2 ~~~~~~~~~~
-        //var con = new UIControl();
-        var control = new TextBox();
-        var control2 = control;
-        var control3 = new TextBox();
-        control.disable();
-        System.out.println(control.isEnabled());
-        System.out.println(control.hashCode());
-        System.out.println(control.equals(control2));
-        System.out.println(control.equals(control3));
-        System.out.println(control.toString());
 
-
-
-
+        var calculator = new TaxCalculator2018(100_000);
+        var report = new TaxReport();
+        report.show(calculator);
+        report.show(new TaxCalculator2019());
     }
 
 }
